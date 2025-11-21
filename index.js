@@ -1,22 +1,18 @@
 import express from "express";
 import pg from "pg";
+import "dotenv/config";
 
 const app = express();
 const PORT = 3000;
 
 //TODO: move this to env vars
-const USERNAME = "postgres";
-const HOST = "localhost";
-const DATABASE = "BookReview";
-const PASSWORD = "admin";
-const DB_PORT = 5433;
 
 const db = new pg.Client({
-    user: USERNAME,
-    host: HOST,
-    database: DATABASE,
-    password: PASSWORD,
-    port: DB_PORT
+    user: process.env.DB_USER,
+    host: process.env.DB_HOST,
+    database: process.env.DB_DATABASE,
+    password: process.env.DB_PASSWORD,
+    port: process.env.DB_PORT
 })
 
 db.connect();
