@@ -1,11 +1,10 @@
-import axios from "axios";
 import express from "express";
 import pg from "pg";
-import crypto from "node:crypto";
 
 const app = express();
 const PORT = 3000;
 
+//TODO: move this to env vars
 const USERNAME = "postgres";
 const HOST = "localhost";
 const DATABASE = "BookReview";
@@ -41,8 +40,6 @@ async function getReviews() {
     return null;
 }
 
-// TODO: get all data
-// TODO: Send all data
 app.get("/reviews", async (req, res) => {
     try {
         const result = await getReviews();
@@ -64,7 +61,6 @@ app.post("/new", async (req, res) => {
         const result = await db.query('insert into reviews (title, review, rating, cover_id, key, author) values ($1, $2, $3, $4, $5, $6) returning *',
             [req.body.title, req.body.review, Number(req.body.rating), req.body.cover_id, req.body.book_id, req.body.author]
         );
-        console.log(result);
         //TODO: should return to a new ejs
         res.send({ "returningId": result.rows[0].id });
     } catch (err) {
@@ -81,13 +77,10 @@ app.post("/create", async (req, res) => {
 })
 
 app.get("/:id", async (req, res) => {
-    console.log("Getting id");
     const review_id = Number(req.params.id);
-    console.log(req.params);
     try {
         const result = await db.query("select * from reviews where id=$1", [review_id]);
         const data = result.rows[0];
-        console.log(data);
         res.render("new.ejs", {
             mode: "edit", id: review_id, result: {
                 title: data.title,
@@ -106,12 +99,9 @@ app.get("/:id", async (req, res) => {
 
 app.post("/:id", async (req, res) => {
     const review_id = Number(req.params.id);
-    console.log(review_id);
-    console.log(req.body);
     try {
         const result = await db.query("update reviews set title=$1, review=$2, rating=$3 where id = $4 returning *", [req.body.title, req.body.review, req.body.rating, review_id]);
         const data = result.rows[0];
-        console.log(data);
         res.send({
             mode: "edit",
             redirect_url: `/${review_id}`,
@@ -134,18 +124,11 @@ app.delete("/delete/:id", async (req, res) => {
     }
 })
 
-app.get("")
-
 app.listen(PORT, () => {
     console.log(`Listening at port ${PORT}`);
 })
-
-
 
 process.on("SIGINT", () => {
     db.end();
     process.exit(0);
 });
-
-
-//TODO: review list based on 
