@@ -1,0 +1,66 @@
+:root {
+    --bg-color: #EFECE3;
+    --btn-bg-color: #8FABD4;
+    --card-bg-color: #a7c6f6;
+    --btn-border-color: rgb(72, 94, 129);
+
+
+    --heading-color: #000000;
+    --button-color: #1a1a1a;
+    --content-color: #1a1a1a;
+}
+
+body {
+    background-color: var(--bg-color);
+}
+
+@keyframes glow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    }
+
+    50% {
+        box-shadow: 0 0 50px rgb(97, 135, 197);
+    }
+}
+
+.delius-swash-caps {
+    font-family: "Delius Swash Caps", cursive;
+    font-weight: 1000;
+    color: var(--heading-color)
+}
+
+.delius-swash-caps-regular {
+    font-family: "Delius Swash Caps";
+    /* font-weight: 100; */
+    color: var(--content-color);
+    font-size: 1.4rem;
+    /* font-style: normal; */
+
+}
+
+.button-reg {
+    background-color: var(--btn-bg-color);
+    color: var(--button-color);
+    border-radius: 10%;
+    border: solid 3px var(--btn-border-color);
+    margin: 1rem;
+    min-height: 3rem;
+    font-family: "Delius Swash Caps";
+    font-weight: 100;
+    font-size: 1rem;
+}
+
+.glower:hover{
+    animation: glow 2s ease-in-out 0s 1;
+}
+
+.scaler:hover{
+    scale: 1.1
+}
+
+.pointer{
+    cursor: pointer;
+}

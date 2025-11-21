@@ -1,0 +1,33 @@
+<section>
+
+    <div class="container my-5 position-relative">
+        <div class="row d-flex align-items-center mx-0">
+            <div class="col-1 col-sm-1 pe-0 d-flex justify-content-end">
+                <img src="./assets/right-arrow-circle.png" height="32px" id="coverThumbnail" alt="icon" />
+            </div>
+            <div class="col-8 col-sm-9 px-0 position-relative">
+
+                <% if (locals.result) { %>
+                    <textarea class="title glower delius-swash-caps d-none" placeholder="Enter Title"
+                        id="titleId"><%= result.title %></textarea>
+                    <h1 class="title glower delius-swash-caps" placeholder="Enter Title" id="title-header">
+                        <%=result.title%>
+                    </h1>
+                <%} else {%>
+                    <textarea class="title glower delius-swash-caps" placeholder="Enter Title"
+                        id="titleId"></textarea>
+                    <h1 class="title glower delius-swash-caps d-none" placeholder="Enter Title" id="title-header">
+                    </h1>
+                <%}%>
+
+            </div>
+            <div class="col-1 col-sm-1 d-flex justify-content-start pe-0">
+                <!-- <img class="pointer glower scaler mx-1" src="./assets/edit-icon.png" height="32px" id="search" /> -->
+                <img class="pointer glower scaler" src="./assets/search.png" height="32px" id="search" />
+            </div>
+        </div>
+        <div class="option-box delius-swash-caps-regular d-none" id="optionBox">
+        </div>
+    </div>
+    </div>
+</section>

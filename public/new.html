@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Momo view Review</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="./styles/root.css" rel="stylesheet">
+    <link href="./styles/new.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <section id="header">
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1 class="delius-swash-caps">Momo View</h1>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <section>
+
+        <div class="container my-5 position-relative">
+            <div class="row d-flex align-items-center blob mx-0">
+                <div class="col-2 col-sm-1 pe-0">
+                    <img src="./assets/right-arrow-circle.png" height="32px" id="coverThumbnail" alt="icon" />
+                </div>
+                <div class="col-9 col-sm-10 px-0 position-relative">
+                    <textarea class="title glower delius-swash-caps" placeholder="Enter Title" id="titleId"></textarea>
+
+                </div>
+                <div class="col-1 col-sm-1 d-flex justify-content-end pe-0">
+                    <img class="pointer glower scaler" src="./assets/search.png" height="32px" id="search" />
+                </div>
+            </div>
+            <div class="option-box delius-swash-caps-regular d-none" id="optionBox">
+            </div>
+        </div>
+        </div>
+    </section>
+    <section>
+        <div class="container my-5">
+            <div class="row">
+                <div class="col-sm-12">
+                    <textarea class="content glower delius-swash-caps-regular" placeholder="Enter Review"></textarea>
+                </div>
+                <div class="d-flex justify-content-end">
+                    <div class="col-sm-4 d-flex justify-content-end">
+                        <button class="button-reg glower scaler wide-button" id="exit-button"
+                            style="color:red;">Exit</button>
+                        <button class="button-reg glower scaler wide-button" id="save-button">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./scripts/new.js"></script>
+
+</body>
+
+</html>

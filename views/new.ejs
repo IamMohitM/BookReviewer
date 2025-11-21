@@ -1,0 +1,91 @@
+<%-include("partials/new-header.ejs")%>
+
+    <body mode="<%=locals.mode%>" id="<%=locals.id%>">
+        <%-include("partials/top-bar-section.ejs") %>
+
+            <%- include ("partials/title.ejs", {mode: locals.mode, result: locals.result}) %>
+
+                <section>
+                    <div class="container my-5">
+                        <div class="row">
+                            <div class="d-flex justify-content-end">
+                                <div class="col-3 d-flex justify-content-end mb-2">
+                                    <% if (locals.result){%>
+                                        <div class="star-div" rating="<%=result.rating%>" id="ratingDiv">
+                                            <% } else {%>
+                                                <div class="star-div" rating=0 id="ratingDiv">
+                                                <%}%>
+                                                    <button><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                            height="16" viewBox="0 0 16 16" fill="none">
+                                                            <path
+                                                                d="M3.612 15.443c-.396.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.282-.95l4.898-.696L7.994.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                                                                fill="none" stroke="currentColor" stroke-width="1.5"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                        </svg>
+                                                    </button>
+                                                    <button><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                            height="16" viewBox="0 0 16 16" fill="none">
+                                                            <path
+                                                                d="M3.612 15.443c-.396.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.282-.95l4.898-.696L7.994.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                                                                fill="none" stroke="currentColor" stroke-width="1.5"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                        </svg>
+                                                    </button>
+                                                    <button><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                            height="16" viewBox="0 0 16 16" fill="none">
+                                                            <path
+                                                                d="M3.612 15.443c-.396.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.282-.95l4.898-.696L7.994.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                                                                fill="none" stroke="currentColor" stroke-width="1.5"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+
+                                                        </svg>
+                                                    </button>
+                                                    <button><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                            height="16" viewBox="0 0 16 16" fill="none">
+                                                            <path
+                                                                d="M3.612 15.443c-.396.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.282-.95l4.898-.696L7.994.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                                                                fill="none" stroke="currentColor" stroke-width="1.5"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                        </svg>
+                                                    </button>
+                                                    <button><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                            height="16" viewBox="0 0 16 16" fill="none">
+                                                            <path
+                                                                d="M3.612 15.443c-.396.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.282-.95l4.898-.696L7.994.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                                                                fill="none" stroke="currentColor" stroke-width="1.5"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                        </svg>
+                                                    </button>
+                                        </div>
+                                </div>
+                            </div>
+                            <%-include("partials/review-text.ejs", {mode: locals.mode, result: locals.result})%>
+                                <div class="d-flex justify-content-end" id="buttonView">
+                                    <div class="col-sm-4 d-flex justify-content-end">
+
+                                        <button class="button-reg glower scaler wide-button" id="exit-button"
+                                            style="color:red;">Exit</button>
+
+                                        <% if(locals.mode==="create" ) { %>
+                                            <button class="button-reg glower scaler wide-button"
+                                                id="save-button">Save</button>
+                                            <% }else{ %>
+                                                <button class="button-reg glower scaler wide-button"
+                                                    id="update-button">Update</button>
+                                                <%}%>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+
+                </section>
+
+
+                <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+                <script src="./scripts/review-list.js"></script>
+                <script src="./scripts/new.js"></script>
+
+    </body>
+
+    </html>

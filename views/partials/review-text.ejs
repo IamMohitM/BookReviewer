@@ -1,0 +1,11 @@
+<div class="col-sm-12 delius-swash-caps-regular">
+    <% if (locals.result) {%>
+        <textarea class="content glower d-none" id='reviewEdit' placeholder="Enter Review"
+            oninput="this.style.height = 'auto'; this.style.height = (this.scrollHeight + 10) + 'px';"> <%=result.review%></textarea>
+        <p id="reviewText"><%=result.review%></p>
+<% }else {%>
+            <textarea class="content glower" id='reviewEdit' placeholder="Enter Review"
+                oninput="this.style.height = 'auto'; this.style.height = (this.scrollHeight + 10) + 'px';"></textarea>
+            <p class="d-none" id="reviewText"></p>
+    <% }%>
+</div>

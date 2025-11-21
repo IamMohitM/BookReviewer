@@ -1,0 +1,112 @@
+.title,
+.content {
+    width: 100%;
+    border: none;
+    /* background-color: var(--bg-color); */
+    background-color: #f9f7f1;
+    margin-bottom: 0;
+    height: 100%;
+}
+
+h1.title {
+    background-color: var(--bg-color);
+    margin-bottom: 0;
+}
+
+.title {
+    font-size: x-large;
+    height: 32px;
+    /* height: auto; */
+    overflow: hidden;
+    /* overflow-y: auto;
+    resize: vertical; */
+}
+
+.content {
+    font-size: large;
+    min-height: 100px;
+
+    scroll-behavior: auto;
+}
+
+.blob {
+    background-color: #f9f7f1;
+    border-radius: 10px;
+}
+
+.option-button {
+    border: none;
+    background-color: inherit;
+    border-bottom: 1px solid black;
+}
+
+.option-button:hover {
+    background-color: var(--bg-color);
+    cursor: pointer;
+}
+
+
+
+.option-box {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    z-index: 10;
+    background-color: #f9f7f1;
+    border-radius: 10px;
+    text-align: start;
+    /* width: 100%; */
+}
+
+/* .option-box  ol{
+    list-style-type: none;
+    /* padding: 0px; */
+/* } */
+
+/* .option-box > div button{
+   
+}
+
+.option-box > div button:hover{
+     background-color: var(--bg-color);
+     cursor: pointer;
+} */
+
+.wide-button {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.star-div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: none;
+    justify-content: start;
+    padding: 0.5rem 0 0.5rem 0;
+}
+
+.star-div>button {
+    border: none;
+    background-color: inherit;
+    padding: none;
+}
+
+.star-div svg {
+    width: 24px;
+    height: 24px;
+}
+
+@media (max-width: 760px) {
+    .star-div svg {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+
+/* #options-row{
+    position: absolute;
+    z-index: 10;
+} */

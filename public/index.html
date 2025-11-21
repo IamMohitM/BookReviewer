@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Momo-view</title>
+    <link href="./styles/root.css" rel="stylesheet">
+    <link href="./styles/index.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&display=swap" rel="stylesheet">
+</head>
+<section id="heading">
+    <div class="heading-div">
+        <h1 class="delius-swash-caps">Momo View</h1>
+    </div>
+</section>
+<section id='main'>
+    <div class="main-div">
+        <form action="/create" method="post">
+            <button type="submit" class="button-reg glower scaler" id="create-button">Create Review</button>
+        </form>
+        <form action="/reviews" method="get">
+            <button type='submit' class="button-reg glower scaler" id="review-button">Reviews</button>
+        </form>
+    </div>
+</section>
+
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./scripts/index.js" charset="UTF-8"></script>
+</body>
+
+</html>
